@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Équipe - Jardin des Fleurs</title>
+    <link  href="css/equipe.css"  rel="stylesheet">
+</head>
+<body>
+    <%- include("navbar") -%>
+    
+    <!-- Section principale de l'équipe -->
+    <main>
+        <h1>Notre Équipe</h1>
+        <%  personnels.forEach(p =>{ %>
+            <h3><%= p.nom %> </h3>
+            <p><%= p.position %></p>
+        <% }) %>
+        
+        <!-- Liste des membres de l'équipe -->
+        <section class="team">
+            <article class="team-member">
+                <div class="team-info">
+                    <h2>Abdou Fatimata</h2>
+                    <p class="position">Chef cuisinier</p>
+                    <p>Avec 15 ans d'expérience en cuisine, Fatimata crée des plats délicieux et innovants qui ravissent nos clients.</p>
+                </div>
+            </article>
+
+            <article class="team-member">
+                <div class="team-info">
+                    <h2> Ali Marie </h2>
+                    <p class="position">Responsable salle</p>
+                    <p>Marie est en charge de l'accueil et du service en salle, assurant une expérience conviviale et professionnelle à chaque client.</p>
+                </div>
+            </article>
+
+            <article class="team-member">
+                <div class="team-info">
+                    <h2> Kamali Bacar</h2>
+                    <p class="position">Barmané</p>
+                    <p>Bacar prépare des cocktails exceptionnels et veille à ce que chaque client passe un agréable moment au bar.</p>
+                </div>
+            </article>
+
+            <!-- Ajouter d'autres membres ici -->
+
+        </section>
+    </main>
+
+    <!-- Pied de page -->
+    <footer>
+        <p>Jardin des Fleurs. Tous droits réservés.</p>
+        <p><a href="contact.ejs">Contactez-nous</a></p>
+</body>
+</html>

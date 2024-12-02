@@ -1,0 +1,108 @@
+/* Style général du menu */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Navigation */
+header nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background: #222;
+    margin: 0;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: inline-block;
+}
+
+header nav ul li a:hover {
+    background: #ff4500;
+    border-radius: 5px;
+}
+
+/* Section du menu */
+main {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+/* Liste des plats */
+.menu-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Utilisation du grid pour une disposition fluide */
+    gap: 30px;
+    justify-items: center;
+}
+
+/* Élément de chaque plat */
+.menu-item {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 350px;
+    text-align: left;
+}
+
+.menu-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.menu-info {
+    padding-top: 15px;
+}
+
+.menu-info h2 {
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.price {
+    font-size: 1.5rem;
+    color: #ff4500;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.menu-info p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Pied de page */
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+footer a {
+    color: #ff4500;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

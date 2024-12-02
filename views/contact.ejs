@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8"> <!-- Spécifie l'encodage des caractères en UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Assure une bonne mise en page sur mobile -->
+    <title>Contact - Jardin des Fleurs</title> <!-- Titre de la page affiché dans l'onglet du navigateur -->
+    <link  href="css/contact.css" rel="stylesheet" > <!-- Lien vers le fichier CSS externe -->
+ </head>
+<body>
+    <%- include("navbar") -%>
+
+    <!-- Section principale de contact -->
+    <main>
+        <h1>Contactez-Nous</h1> <!-- Titre principal de la page -->
+
+        <!-- Formulaire de contact -->
+        <section class="contact-form">
+            <form action="submit_form.php" method="POST"> <!-- Formulaire qui envoie les données vers un fichier PHP -->
+                <!-- Champ pour le nom -->
+                <div class="form-group">
+                    <label for="nom">Nom</label> <!-- Label associé au champ nom -->
+                    <input type="text" id="nom" name="nom" required> <!-- Champ texte pour le nom, obligatoire -->
+                </div>
+
+                <!-- Champ pour le prénom -->
+                <div class="form-group">
+                    <label for="prenom">Prénom</label> <!-- Label associé au champ prénom -->
+                    <input type="text" id="prenom" name="prenom" required> <!-- Champ texte pour le prénom, obligatoire -->
+                </div>
+
+                <!-- Champ pour le message -->
+                <div class="form-group">
+                    <label for="message">Message</label> <!-- Label associé au champ message -->
+                    <textarea id="message" name="message" rows="5" required></textarea> <!-- Zone de texte pour le message -->
+                </div>
+
+                <!-- Bouton pour envoyer le formulaire -->
+                <div class="form-group">
+                    <button type="submit">Envoyer</button> <!-- Bouton pour soumettre le formulaire -->
+                </div>
+            </form>
+        </section>
+
+        <!-- Informations de contact supplémentaires -->
+        <section class="contact-info">
+            <h3>contact-info</h3>
+                <p><%= coordonnees.horaires %> </p>
+                <p><%= coordonnees.numero %></p>
+            <h2>Nos Coordonnées</h2> <!-- Titre des informations supplémentaires -->
+            <p><strong>Numéro de téléphone :</strong> 0639 00 02 03</p> <!-- Numéro de téléphone du restaurant -->
+            <p><strong>Horaires d'ouverture :</strong></p> <!-- Titre pour les horaires d'ouverture -->
+            <ul>
+                <!-- Liste des horaires d'ouverture -->
+                <li>Lundi - Vendredi: 8h00 - 21h00</li>
+                <li>Samedi - Dimanche: 9h00 - 23h00</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Pied de page -->
+    <footer>
+        <p>Jardin des Fleurs. Tous droits réservés.</p> <!-- restaurant -->
+        <p><a href="contact.ejs">Contactez-nous</a></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,130 @@
+/* Style général */
+body {
+    font-family: Arial, sans-serif; /* Définir la police de caractères pour le texte */
+    margin: 0; /* Enlever les marges par défaut du body */
+    padding: 0; /* Enlever les espacements par défaut du body */
+    line-height: 1.6; /* Augmenter l'espacement entre les lignes pour une meilleure lisibilité */
+    color: black; /* Couleur du texte */
+}
+
+/* Navigation */
+header nav ul {
+    list-style: none; /* Enlever les puces de la liste */
+    padding: 0; /* Enlever le padding */
+    display: flex; /* Utilisation de Flexbox pour la mise en page horizontale des éléments */
+    justify-content: center; /* Centrer les éléments horizontalement */
+    background: black; /* Couleur de fond sombre pour la barre de navigation */
+    margin: 0; /* Enlever la marge par défaut */
+}
+
+header nav ul li {
+    margin: 0 15px; /* Espacement horizontal entre chaque élément de la liste */
+}
+
+header nav ul li a {
+    color: olive; /* Couleur du texte des liens */
+    text-decoration: none; /* Enlever le soulignement des liens */
+    padding: 10px 15px; /* Espacement interne des liens */
+    display: inline-block; /* Faire en sorte que les liens soient affichés en bloc pour permettre de les styliser */
+}
+
+header nav ul li a:hover {
+    background: blue; /* Changer la couleur de fond au survol du lien */
+    border-radius: 5px; /* Bordure arrondie autour du lien au survol */
+}
+
+/* Section principale de contact */
+main {
+    padding: 50px 20px; /* Espacement autour du contenu principal */
+    text-align: center; /* Centrer le texte */
+}
+
+h1 {
+    font-size: 2.5rem; /* Taille du titre principal */
+    margin-bottom: 30px; /* Espacement sous le titre */
+}
+
+/* Formulaire de contact */
+.contact-form {
+    background-color: rgb(56, 100, 14); /* Couleur de fond claire pour le formulaire */
+    padding: 20px; /* Espacement interne du formulaire */
+    border-radius: 8px; /* Coins arrondis pour le formulaire */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre portée pour donner un effet de profondeur */
+    max-width: 600px; /* Limiter la largeur du formulaire */
+    margin: 0 auto; /* Centrer le formulaire sur la page */
+}
+
+.form-group {
+    margin-bottom: 20px; /* Espacement entre chaque champ du formulaire */
+    text-align: left; /* Aligner les éléments à gauche */
+}
+
+.form-group label {
+    display: block; /* Afficher le label comme un bloc pour qu'il occupe toute la largeur */
+    font-size: 1.2rem; /* Taille du texte du label */
+    margin-bottom: 5px; /* Espacement sous le label */
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%; /* Champs de texte et de message prennent toute la largeur disponible */
+    padding: 10px; /* Espacement interne pour rendre les champs plus grands et plus lisibles */
+    font-size: 1rem; /* Taille de la police dans les champs */
+    border: 1px solid blueviolet; /* Bordure grise claire autour des champs */
+    border-radius: 5px; /* Bordure arrondie pour les champs */
+}
+
+.form-group textarea {
+    resize: vertical; /* Permet de redimensionner la zone de texte uniquement verticalement */
+}
+
+.form-group button {
+    background-color: black; /* Couleur de fond orange pour le bouton */
+    color: rgba(255, 145, 0, 0.815); /* Couleur du texte du bouton */
+    padding: 10px 20px; /* Espacement interne du bouton */
+    border: none; /* Enlever la bordure du bouton */
+    border-radius: 5px; /* Coins arrondis pour le bouton */
+    font-size: 1.2rem; /* Taille du texte du bouton */
+    cursor: pointer; /* Modifier le curseur pour indiquer que le bouton est cliquable */
+}
+
+.form-group button:hover {
+    background-color: blueviolet; /* Couleur de fond modifiée lors du survol du bouton */
+}
+
+/* Informations de contact */
+.contact-info {
+    margin-top: 50px; /* Espacement supérieur pour séparer du formulaire */
+}
+
+.contact-info h2 {
+    font-size: 2rem; /* Taille du titre des informations de contact */
+    margin-bottom: 20px; /* Espacement sous le titre */
+}
+
+.contact-info ul {
+    list-style: none; /* Enlever les puces des éléments de la liste */
+    padding: 0; /* Enlever le padding */
+    font-size: 1.2rem; /* Taille de la police des informations */
+}
+
+.contact-info ul li {
+    margin: 5px 0; /* Espacement vertical entre chaque élément de la liste */
+}
+
+/* Pied de page */
+footer {
+    background: #222; /* Fond sombre pour le pied de page */
+    color: white; /* Texte blanc dans le pied de page */
+    text-align: center; /* Centrer le texte */
+    padding: 10px 0; /* Espacement interne */
+}
+
+footer{
+    color: gray; /* Couleur orange pour les liens */
+    text-decoration: none; /* Enlever le soulignement */
+}
+
+footer{
+    text-decoration: underline; /* Souligner les liens au survol */
+}

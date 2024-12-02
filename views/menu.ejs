@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8"><!-- Spécifie l'encodage des caractères en UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Assure une bonne mise en page sur mobile -->
+    <title>Menu - Jardin des Fleur:</title><!-- Titre de la page affiché dans l'onglet du navigateur -->
+    <link rel="stylesheet" href="css/menu.css"><!-- Lien vers le fichier CSS externe -->
+</head>
+<body>
+    <%- include("navbar") -%>
+    
+    <!-- Section principale du menu -->
+    <main>
+        <h1>Notre Menu</h1><!-- Titre principal de la page -->
+        <% menuDujour.menu.forEach( m => { %>
+            <p><%= menuDujour.menu %></p>
+                <% }) %>
+        <!-- Liste des plats -->
+        <section class="menu-list">
+            <article class="menu-item">
+                <img src="" alt="Entrée Salade César" class="menu-img">
+                <div class="menu-info">
+                    <h2>Salade César</h2>
+                    <p class="price">10 </p>
+                    <p>Une salade fraîche avec laitue croquante, poulet grillé, croûtons, et sauce César maison.</p>
+                </div>
+            </article>
+
+            <article class="menu-item">
+                <img src="" alt="Entrée Soupe à l'oignon" class="menu-img">
+                <div class="menu-info">
+                    <h2>Soupe à l'oignon</h2>
+                    <p class="price">8 </p>
+                    <p>Une soupe traditionnelle à l'oignon gratinée au fromage, servie avec du pain frais.</p>
+                </div>
+            </article>
+
+            <article class="menu-item">
+                <img src="" alt="Plat Bœuf Bourguignon" class="menu-img">
+                <div class="menu-info">
+                    <h2>Bœuf Bourguignon</h2>
+                    <p class="price">18 </p>
+                    <p>Un classique de la cuisine française, mijoté lentement dans du vin rouge, accompagné de légumes frais.</p>
+                </div>
+            </article>
+
+            <article class="menu-item">
+                <img src="" alt="Plat Pizza Margherita" class="menu-img">
+                <div class="menu-info">
+                    <h2>Pizza Margherita</h2>
+                    <p class="price">12 </p>
+                    <p>Une pizza classique à la tomate, mozzarella fondue, et basilic frais.</p>
+                </div>
+            </article>
+
+            <!-- Ajouter d'autres plats ici -->
+
+        </section>
+    </main>
+
+    <!-- Pied de page -->
+    <footer>
+        <p>Jardin des Fleurs. Tous droits réservés.</p>
+        <p><a href="contact.ejs">Contactez-nous</a></p>
+    </footer>
+</body>
+</html>
