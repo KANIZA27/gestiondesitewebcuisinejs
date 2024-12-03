@@ -3,7 +3,7 @@
 const express = require ("express");
 const url = require("url");
 const fs = require("fs")
-const mysql = require ("mysql");
+const mysql2 = require ("mysql2");
 const myConnection = ("express-myconnection");
 
 const optionConnection = {
@@ -19,7 +19,7 @@ const app = express();
 
 // Middleware de connection à la base de données
 // 'pool' est la stratégie de connection à al base de données
-app.use(myConnection(optionConnection, "pool"));
+app.use(myConnection(mysql2, optionConnection, "pool"));
 
 // L'endroit ou se situent les vues qui s'affichent sur la navigateur
 app.set("views", "./views");
@@ -27,7 +27,7 @@ app.set("views", "./views");
 // Je précisez le moteur de lecture de vues à savoir ejs 
 app.set("view engine", "ejs");
 
-// je veux récuprér "fichie static"
+// je veux récupèrér "fichier static"
 app.use(express.static("public"));
 // je veux crée un route "/accueil"  en utilise la méthode de type "GET"
 // je crée une route  pour http://localhost:3006
@@ -35,6 +35,7 @@ app.use(express.static("public"));
 
 // je crée un route "/accueil" en utilise la méthode de type "GET"
 app.get("/accueil", (req, res) => {
+
     let date = new Date();
     let  salutation = "Bonsoir"
 
@@ -50,6 +51,25 @@ app.get("/accueil", (req, res) => {
 
 // je crée un route "/menu" en utilise la méthode de type "GET"
 app.get("/menu", (req, res) => {
+    // Je veux récupèrer la des plats ensregistrés dans la base de données qu'est "Restaurant".
+    // D'abord je mais connecte à la base de données grâce la méthode "getConnection()".
+    req.getConnection((erreur, connection)=> {
+        // Ici, je teste s'il ya un erreur lors de la connection à la base de données
+        if(erreur){
+            console.log(erreur);
+        }else {
+            connection.query("SELECT * FROM plat",[], (err, resultat) => {
+                if (err) {
+                    console.log(err);
+                }else {
+                    console.log("resultat :", resultat);
+                    res.render("menu", {resultat});
+                }
+            });
+        }
+    });
+
+
     menuDujour ={
      menu:["Salade César","Soupe à l'oignon","Bœuf Bourguignon","Pizza Margherita"]
     };
@@ -79,6 +99,11 @@ app.get("/contact", (req, res) => {
 
 app.listen(3006, () =>{
     console.log("serveur écoute le port 3006");
+});
+
+// Ici, je crée une route en utiliser la méthode "post"
+app.post("/plat", (req, res) => {
+    res.render("formplat");
 });
 
 module.exports =app;
