@@ -5,12 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formulaire Dynamique</title>
 </head>
-<body> 
-    <form><!-- Création du formulaire-->
-        <label for="fname">Nom du plat:</label>
-        <input type="text" id="fname" name="fname"><br>
-        <label for="lname">prix</label><br>
-        <input type="text" id="lname" name="lname" value="Doe"><br><br>
+<body>
+  <h3>Créer un nouveau plat</h3>
+    <form action="/plat" methode="post"><!-- Création du formulaire-->
+      <input type="hidden" name="id" id="id">
+        <label for="nomplat">Nom du plat:</label>
+        <input type="text" id="nomplat" name="nom"><br>
+        <label for="prixplat">prix</label><br>
+        <input type="number" id="prix" name="prix"><br><br>
         <input type="submit" value="Enregistrer">
     </form>
   

@@ -8,7 +8,6 @@
 </head>
 <body> 
     <%- include("navbar") -%>
-    
     <!-- Section principale de la page d'accueil -->
     <main>
         <!-- Bannière principale -->
@@ -16,7 +15,7 @@
             <h1>Bienvenue chez Jardin des Fleurs</h1>
             <% utilisateur.nom.forEach(n =>{ %>
                 <h3><%= utilisateur.maSalutation + " "+ n %> </h3>
-            <% }) %>
+            <% }); %>
             <img src="image/Fleur.jpg" alt="Fleur" class="Fleur-image">
             <img src="image/photomenu.jpg" alt="photomenu" class="photomenu-image">
             
@@ -46,7 +45,7 @@
     <footer>
         <p>Jardin des Fleurs. Tous droits réservés.</p>
         <p><a href="contact.ejs">Contactez-nous</a></p>
-        <p>Contactez-nous</p>
     </footer>
+    <%- include("footer") -%>
 </body>
 </html>

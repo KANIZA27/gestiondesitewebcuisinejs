@@ -8,13 +8,32 @@
 </head>
 <body>
     <%- include("navbar") -%>
-    
+
+    <h3>Créer un nouveau plat</h3>
+    <form action="/plat" methode="post"><!-- Création du formulaire-->
+      <input type="hidden" name="id" id="id">
+        <label for="nomplat">Nom du plat:</label>
+        <input type="text" id="nomplat" name="nom"><br>
+        <label for="prixplat">prix</label><br>
+        <input type="number" id="prix" name="prix"><br><br>
+        <input type="submit" value="Enregistrer">
+    </form>
     <!-- Section principale du menu -->
     <main>
-        <h1>Notre Menu</h1><!-- Titre principal de la page -->
-        <% resultat.forEach( r => { %>
-            <p><%= r.menu %></p>
-                <% }) %>
+        <h1>Notre Menu</h1> <!-- Titre principal de la page -->
+        <% resultat.forEach(plat => { %> <!-- Boucle pour afficher chaque plat -->
+            <div>
+                <p><%= plat.nom %></p> <!-- Affiche le nom du plat -->
+                <span><%= plat.prix %> €</span> <!-- Affiche le prix du plat -->
+                <!-- Bouton Supprimer avec appel à la fonction -->
+                <input type="button" value="Supprimer" onclick="supprimerPlat('<%= plat.id %>', '<%= plat.nom %>', '<%=plat.prix %>')">  <!-- Bouton Supprimer -->
+                <input type="button" value="Modifier" onclick="rempliDoonees('<%= plat.id %>', '<%= plat.nom %>', '<%= plat.prix %>')"> <!-- Correctement fermé -->
+            </div>
+        <% }); %>
+    </main>
+    
+    
+    
         <!-- Liste des plats -->
         <section class="menu-list">
             <article class="menu-item">
@@ -60,8 +79,15 @@
 
     <!-- Pied de page -->
     <footer>
-        <p>Jardin des Fleurs. Tous droits réservés.</p>
-        <p><a href="contact.ejs">Contactez-nous</a></p>
+        
     </footer>
+    <%- include("footer") -%>
 </body>
+<script>
+    function rempliDoonees(id,nom,prix){
+        document.querySelector("#id").value = id;
+        document.querySelector("#nomplat").value = nom;
+        document.querySelector("#prix").value = prix;
+    }
+</script>
 </html>
