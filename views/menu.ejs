@@ -26,7 +26,7 @@
                 <p><%= plat.nom %></p> <!-- Affiche le nom du plat -->
                 <span><%= plat.prix %> €</span> <!-- Affiche le prix du plat -->
                 <!-- Bouton Supprimer avec appel à la fonction -->
-                <input type="button" value="Supprimer" onclick="supprimerPlat('<%= plat.id %>', '<%= plat.nom %>', '<%=plat.prix %>')">  <!-- Bouton Supprimer -->
+                <input type="button" value="Supprimer" onclick="supprimerDonnees('<%= plat.id %>')">  <!-- Bouton Supprimer -->
                 <input type="button" value="Modifier" onclick="rempliDoonees('<%= plat.id %>', '<%= plat.nom %>', '<%= plat.prix %>')"> <!-- Correctement fermé -->
             </div>
         <% }); %>
@@ -89,5 +89,18 @@
         document.querySelector("#nomplat").value = nom;
         document.querySelector("#prix").value = prix;
     }
+    function supprimerDonnees(id) {
+        let routeComplete = "plat/" + id;
+
+        fetch(
+            routeComplete, {method : "DELETE"},
+            console.log("affichier fetch1")
+        ).then(
+            (response) => response.json(),
+            console.log("response.json")
+        ).then(
+            (donnee) => window.location.href = donnee.routeRacine // Redirige si routeRacine existe
+        ).catch((erreur) => console.log(erreur))  // Gère les erreurs réseau ou logiques
+    } 
 </script>
 </html>

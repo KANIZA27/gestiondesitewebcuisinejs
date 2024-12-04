@@ -169,7 +169,7 @@ app.delete("/plat/:id", (req, res) => {
                         // Si la suppression réussit, affiche un message dans la console
                         console.log("Suppression réussie");
                         // Redirige l'utilisateur vers la page "/menu"
-                        res.status(300).redirect("/menu");
+                        res.status(200).json({routeRacine:"/menu"});
                     }
                 }
             );
