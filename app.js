@@ -24,10 +24,10 @@ app.use(myConnection(mysql2, optionConnection, "pool"));
 // Middleware pour analyser les données envoyées dans le corps des requêtes (format URL-encoded)
 app.use(express.urlencoded({ extended: false }));
 
-// Définir le dossier contenant les vues
+// Je définir le dossier contenant les vues
 app.set("views", "./views");
 
-// Définir le moteur de template comme étant EJS
+// Je définir le moteur de template comme étant EJS
 app.set("view engine", "ejs");
 
 // Middleware pour servir les fichiers statiques depuis le dossier "public"
@@ -153,7 +153,7 @@ app.delete("/plat/:id", (req, res) => {
 
     // Établit une connexion à la base de données
     req.getConnection((erreur, connection) => {
-        // Vérifie s'il y a une erreur lors de la connexion
+        // Vérifie s'il y a un erreur lors de la connexion
         if (erreur) {
             console.log(erreur); // Affiche l'erreur dans la console
         } else {

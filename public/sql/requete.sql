@@ -10,3 +10,8 @@
     );
 
      INSERT INTO chanson(titre,id_chanteur, date_sortir) VALUES('Domoni',1,'2024-05-02');
+
+
+
+
+     
